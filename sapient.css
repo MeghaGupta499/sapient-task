@@ -1,0 +1,292 @@
+@media screen and ( min-width: 1px) and ( max-width: 700px ){
+  .body {
+    background: #dcdcdc;
+    display: flex;
+    flex-flow: column;
+    overflow: scroll;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 20px;
+  }
+
+  .spacexImage {
+    /* width: 200px; */
+    height: 200px;
+    background: #dcdcdc;
+  }
+
+  .downBody {
+    display: flex;
+    flex-flow: column;
+  }
+
+  .timeItem {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+
+  .spacexContainer {
+    display: grid;
+    grid-template-columns: auto;
+  }
+
+  .leftFilter {
+    background: #fff;
+    flex: 1;
+    height: fit-content;
+    padding: 10px;
+  }
+
+  .spacexButton {
+    width: 70px;
+    margin-top: 20px;
+    align-self: center;
+    background-color: #c7df96;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    flex: 1 1 120px;
+    margin: 5px;
+  }
+
+  .filterText{
+    font-weight: 700;
+    margin-left: 10px;
+    font-size: 16px;
+  }
+
+  .launchCard{
+    background: #fff;
+    display: flex;
+    flex-flow: column;
+    padding: 10px;
+    margin-top: 10px;
+  }
+
+  .launchCardText {
+    text-align: center;
+    width: fit-content;
+    margin: auto;
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+    padding: 20px;
+  }
+
+  .flightNo {
+    font-weight: 700;
+    color: #494d83;
+    text-align: left;
+    padding: 5px 0;
+  }
+
+  .key {
+    font-weight: bold;
+    text-align: left;
+  }
+
+  .value {
+    text-align: left;
+    color: blue;
+    font-weight: normal;
+    margin-left: 5px;
+  }
+}
+
+@media screen and ( min-width: 701px) and ( max-width: 1024px ){
+  .body {
+    background: #dcdcdc;
+    display: flex;
+    flex-flow: column;
+    overflow: scroll;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 20px;
+  }
+
+  .spacexImage {
+    width: 220px;
+    height: 220px;
+    background: #dcdcdc;
+    margin: auto;
+  }
+
+  .downBody {
+    display: flex;
+  }
+
+  .timeItem {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .spacexContainer {
+    display: grid;
+    grid-template-columns: auto auto;
+  }
+
+  .leftFilter {
+    background: #fff;
+    width: 500px;
+    flex: 1;
+    height: fit-content;
+    padding: 10px;
+  }
+
+  .spacexButton {
+    width: 70px;
+    margin-top: 20px;
+    align-self: center;
+    background-color: #c7df96;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+  }
+
+  .filterText{
+    font-weight: 700;
+    margin-left: 10px;
+    font-size: 16px;
+  }
+
+  .launchCard{
+    background: #fff;
+    margin: 0 10px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-flow: column;
+    padding: 10px;
+    width: 370px;
+  }
+
+  .launchCardText {
+    text-align: center;
+    width: fit-content;
+    margin: auto;
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+    padding: 20px;
+  }
+
+  .flightNo {
+    font-weight: 700;
+    color: #494d83;
+    text-align: left;
+    padding: 5px 0;
+  }
+
+  .key {
+    font-weight: bold;
+    text-align: left;
+  }
+
+  .value {
+    text-align: left;
+    color: blue;
+    font-weight: normal;
+    margin-left: 5px;
+  }
+}
+
+@media screen and ( min-width: 1025px ) {
+  .body {
+    background: #dcdcdc;
+    display: flex;
+    flex-flow: column;
+    overflow: scroll;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 20px;
+  }
+
+  .spacexImage {
+    width: 220px;
+    height: 220px;
+    background: #dcdcdc;
+  }
+
+  .downBody {
+    display: flex;
+  }
+
+  .timeItem {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .spacexContainer {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+  }
+
+  .leftFilter {
+    background: #fff;
+    width: 500px;
+    flex: 1;
+    height: fit-content;
+    padding: 10px;
+  }
+
+  .spacexButton {
+    width: 70px;
+    margin-top: 20px;
+    align-self: center;
+    background-color: #c7df96;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+  }
+
+  .filterText{
+    font-weight: 700;
+    margin-left: 10px;
+    font-size: 16px;
+  }
+
+  .launchCard{
+    background: #fff;
+    margin: 0 10px;
+    margin-bottom: 10px;
+    width: 250px;
+    display: flex;
+    flex-flow: column;
+    padding: 10px;
+  }
+
+  .launchCardText {
+    text-align: center;
+    width: fit-content;
+    margin: auto;
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+    padding: 20px;
+  }
+
+  .flightNo {
+    font-weight: 700;
+    color: #494d83;
+    text-align: left;
+    padding: 5px 0;
+  }
+
+  .key {
+    font-weight: bold;
+    text-align: left;
+  }
+
+  .value {
+    text-align: left;
+    color: blue;
+    font-weight: normal;
+    margin-left: 5px;
+  }
+}
+

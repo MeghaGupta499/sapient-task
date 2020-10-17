@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="./sapient.css">
+
+</head>
+
+<body onload="calculateTimetable(); loadApiData('https://api.spaceXdata.com/v3/launches?limit=100')">
+
+
+  <script>
+    function calculateTimetable() {
+      const years = [];
+      for (let i = 2006; i < 2021; i++) {
+        const item = `<button class="spacexButton" onclick="loadApiData('https://api.spaceXdata.com/v3/launches?limit=100&launch_year=${i}')"> ${i} </button>`;
+        years.push(item);
+      }
+      const finalItem = years.join('');
+      console.log("Hey", finalItem);
+      document.getElementById("times").innerHTML = finalItem;
+    }
+
+    function loadApiData(apiEndpoint) {
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+          // document.getElementById("spacexDataItem").innerHTML 
+          const data = JSON.parse(this.responseText);
+          console.log("Data is ", data);
+          let finalData = [];
+          data.map(item => {
+            const x =
+              `<div class="launchCard">
+              <img src="${item.links.mission_patch}" class="spacexImage" />
+              <div class="flightNo">
+                ${item.mission_name} #${item.flight_number}
+              </div>
+              <div class="key">
+                Mission Ids:
+              </div>
+              <ul class="value">
+                ${item.mission_id.map(id => `<li>${id}</li>`)}
+              </ul>
+              <div style="display: flex;">
+                <div class="key">
+                  Launch year
+                </div>
+                <div class="value">
+                  ${item.launch_year}
+                </div>
+              </div>
+              <div style="display: flex;">
+                <div class="key">
+                  successful launch
+                </div>
+                <div class="value">
+                  ${item.launch_success}
+                </div>
+              </div>
+              <div style="display: flex;">
+                <div class="key">
+                  successful landing
+                </div>
+                <div class="value">
+                  ${item.launch_landing}
+                </div>
+              </div>
+            </div>`;
+            finalData.push(x);
+          });
+          document.getElementById("spacexDataItem").innerHTML = finalData.join("");
+        }
+      };
+      xhttp.open("GET", apiEndpoint, true);
+      xhttp.send();
+    }
+  </script>
+  <div class="body">
+    <h2>SpaceX Launch Program</h2>
+    <div class="downBody">
+      <div class="leftFilter">
+        <h2 class="filterText">
+          Filters
+        </h2>
+        <div class="launchCardText">
+          Launch year
+        </div>
+        <div class="timeItem" id="times">
+
+        </div>
+        <div class="launchCardText">
+          Successful launch
+        </div>
+        <div class="timeItem">
+          <button class="spacexButton" onclick="loadApiData('https://api.spaceXdata.com/v3/launches?limit=100&launch_success=true')">
+            True
+          </button>
+          <button class="spacexButton" onclick="loadApiData('https://api.spaceXdata.com/v3/launches?limit=100&launch_success=false')">
+            False
+          </button>
+        </div>
+        <div class="launchCardText">
+          Successful landling
+        </div>
+        <div class="timeItem">
+          <button class="spacexButton" onclick="loadApiData('https://api.spaceXdata.com/v3/launches?limit=100&land_success=true')">
+            True
+          </button>
+          <button class="spacexButton" onclick="loadApiData('https://api.spaceXdata.com/v3/launches?limit=100&land_success=false')">
+            False
+          </button>
+        </div>
+      </div>
+    <div class="spacexContainer" id="spacexDataItem">
+
+    </div>
+  </div>
+  </div>
+</body>
+
+</html>
